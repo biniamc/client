@@ -99,22 +99,22 @@
         {
           icon: 'mdi-view-dashboard',
           title: 'admin',
-          to: '/Admin',
+          to: '#',
         },
         {
           icon: 'mdi-account',
           title: 'user',
-          to: '/pages/user',
+          to: '#',
         },
         {
           title: 'rtables',
           icon: 'mdi-clipboard-outline',
-          to: '/tables/regular-tables',
+          to: '#',
         },
         {
           title: 'notifications',
           icon: 'mdi-bell',
-          to: '/components/notifications',
+          to: '#',
         },
       ],
     }),

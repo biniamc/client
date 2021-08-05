@@ -4,6 +4,10 @@
     fluid
     tag="section"
   >
+  <!-- <AddCustomerDrawer />
+  <AddCustomerAppBar />
+  <AddCustomerSettings />
+  <AddCustomerView /> -->
     <v-row justify="center">
       <v-col
         cols="12"
@@ -126,7 +130,13 @@
 <script>
 import axios from "axios";
 export default {
-  data() {
+  // components: {
+  //     AddCustomerAppBar: () => import('./components/core/AppBar'),
+  //     AddCustomerDrawer: () => import('./components/core/Drawer'),
+  //     AddCustomerSettings: () => import('./components/core/Settings'),
+  //     AddCustomerView: () => import('./components/core/View'),
+  //   },
+    data() {
     return {
       drawer: false,
       links: [

@@ -4,11 +4,17 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'hash',
+  mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path:'/',
+      name:'home',
+      component: () => import('@/views/Home'),
+
+    },
+    {
+      path: '/admin',
       component: () => import('@/views/dashboard/Index'),
       children: [
         // Dashboard
@@ -19,27 +25,19 @@ export default new Router({
         },
         
         // Pages
-        {
-          name: 'Customer',
-          path: '/Customer',
-          component: () => import('@/views/customer/Customer'),
-        },
+       
         {
           name: 'Complaints',
           path: '/Complaints/:id',
           component: () => import('@/views/complaints/Complaints'),
         },
-        {
-          name: 'Warning',
-          path: '/Warning',
-          component: () => import('@/views/manager/Warning'),
-        },
+       
         
-        {
-          name: 'UpdateCustomer',
-          path: '/UpdateCustomer',
-          component: () => import('@/views/customer/UpdateCustomer'),
-        },
+        // {
+        //   name: 'UpdateCustomer',
+        //   path: '/UpdateCustomer',
+        //   component: () => import('@/views/customer/UpdateCustomer'),
+        // },
         {
           name: 'Employee',
           path: '/Employee',
@@ -52,34 +50,10 @@ export default new Router({
         },
         {
           name: 'UpdateEmployee',
-          path: '/UpdateEmployee',
+          path: '/UpdateEmployee/:id',
           component: () => import('@/views/employee/UpdateEmployee'),
         },
-        {
-          name: 'Assistance',
-          path: '/Assistance',
-          component: () => import('@/views/assistance/Assistance'),
-        },
-        {
-          name: 'Manager',
-          path: '/Manager',
-          component: () => import('@/views/manager/Manager'),
-        },
-        {
-          name: 'ComplaintPage',
-          path: '/ComplaintPage',
-          component: () => import('@/views/customer/ComplaintPage'),
-        },
-        {
-          name: 'customer_service',
-          path: 'Customer_service',
-          component: () => import('@/views/customer_service/Customer_service'),
-        },
-        {
-          name: 'Operation_maintenance',
-          path: '/Operation_maintenance',
-          component: () => import('@/views/operation_maintenance/Operation_maintenance'),
-        },
+        
         {
           name: 'AddCustomer',
           path: '/AddCustomer',
@@ -114,6 +88,77 @@ export default new Router({
         },
         
       ],
+    },
+    {
+      path: '/customer',
+      name: 'Customer',
+      component: () => import('@/views/customer/Index'),
+      children: [
+        {
+          path: '/',
+          name: 'ComplaintPage',
+          component: () => import('@/views/customer/ComplaintPage'),
+        },
+        {
+          path: '/customer-profile',
+          name: 'User Profile',
+          component: () => import('@/views/customer/pages/UserProfile'),
+        },
+      ]
+    },
+    {
+      
+        name: 'Manager',
+        path: '/manager',
+        component: () => import('@/views/manager/Index'),
+      children: [
+        {
+          path: '/',
+          name: 'manger',
+          component: () => import('@/views/manager/Manager'),
+        },
+        {
+          name: 'Warning',
+          path: '/Warning',
+          component: () => import('@/views/manager/Warning'),
+        },
+      ]
+    },
+    {
+      name: 'Assistance',
+      path: '/Assistance',
+      component: () => import('@/views/assistance/Index'),
+      children:[
+        {
+        name: 'Assistance',
+        path: '/',
+      component: () => import('@/views/assistance/Assistance'),
+        },
+      ]
+    },
+    {
+      name: 'Customer_Service',
+      path: '/Customer_Service',
+      component: () => import('@/views/customer_service/Index'),
+      children:[
+        {
+        name: 'Customer_Service',
+        path: '/',
+      component: () => import('@/views/customer_service/Customer_Service'),
+        },
+      ]
+    },
+    {
+      name: 'Operation_Maintenance',
+      path: '/Operation_Maintenance',
+      component: () => import('@/views/Operation_Maintenance/Index'),
+      children:[
+        {
+        name: 'Operation_Maintenance',
+        path: '/',
+      component: () => import('@/views/Operation_Maintenance/Operation_Maintenance'),
+        },
+      ]
     },
     
   ],

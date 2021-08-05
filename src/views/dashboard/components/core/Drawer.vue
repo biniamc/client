@@ -103,18 +103,23 @@
         },
         {
           icon: 'mdi-account',
-          title: 'user',
-          to: '/pages/user',
+          title: 'AddCustomer',
+          to: '/AddCustomer',
+        },
+        {
+          icon: 'mdi-account',
+          title: 'AddEmployee',
+          to: '/AddCustomer',
         },
         {
           title: 'rtables',
           icon: 'mdi-clipboard-outline',
-          to: '/tables/regular-tables',
+          to: '#',
         },
         {
           title: 'notifications',
           icon: 'mdi-bell',
-          to: '/components/notifications',
+          to: '#',
         },
       ],
     }),

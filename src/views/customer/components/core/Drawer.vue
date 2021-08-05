@@ -98,13 +98,13 @@
       items: [
         {
           icon: 'mdi-view-dashboard',
-          title: 'admin',
-          to: '/Admin',
+          title: 'xxxx',
+          to: '/customer',
         },
         {
           icon: 'mdi-account',
-          title: 'user',
-          to: '/pages/user',
+          title: 'Profile',
+          to: '/customer-profile',
         },
         {
           title: 'rtables',
@@ -112,7 +112,7 @@
           to: '/tables/regular-tables',
         },
         {
-          title: 'notifications',
+          title: 'dfghjkl',
           icon: 'mdi-bell',
           to: '/components/notifications',
         },

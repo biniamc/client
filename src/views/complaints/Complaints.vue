@@ -40,6 +40,7 @@
 import axios from "axios";
 export default {
   name: "complaints",
+  
   data() {
     return {
       complaints: [],

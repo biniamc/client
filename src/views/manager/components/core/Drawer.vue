@@ -98,13 +98,8 @@
       items: [
         {
           icon: 'mdi-view-dashboard',
-          title: 'admin',
+          title: 'Manager',
           to: '/Admin',
-        },
-        {
-          icon: 'mdi-account',
-          title: 'user',
-          to: '/pages/user',
         },
         {
           title: 'rtables',

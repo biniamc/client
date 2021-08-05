@@ -4,6 +4,10 @@
     fluid
     tag="section"
   >
+  <!-- <WarningAppBar />
+  <WarningDrawer />
+  <WarningView />
+  <WarningSettings /> -->
     <v-row justify="center">
       
       <v-col
@@ -73,6 +77,12 @@
 <script>
 import axios from "axios";
 export default {
+  // components: {
+  //     WarningAppBar: () => import('./components/core/AppBar'),
+  //     WarningDrawer: () => import('./components/core/Drawer'),
+  //     WarningSettings: () => import('./components/core/Settings'),
+  //     WarningView: () => import('./components/core/View'),
+  //   },
   data() {
     return {
       drawer: false,

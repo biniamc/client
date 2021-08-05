@@ -4,7 +4,10 @@
 
     <dashboard-core-drawer />
 
-    <dashboard-core-view />
+      <v-content>
+        <router-view />
+      <dashboard-core-footer />
+  </v-content>
 
     <dashboard-core-settings />
   </v-app>
@@ -12,13 +15,14 @@
 
 <script>
   export default {
-    name: 'DashboardIndex',
+    name: 'ManagerIndex',
 
     components: {
       DashboardCoreAppBar: () => import('./components/core/AppBar'),
       DashboardCoreDrawer: () => import('./components/core/Drawer'),
       DashboardCoreSettings: () => import('./components/core/Settings'),
       DashboardCoreView: () => import('./components/core/View'),
+       DashboardCoreFooter: () => import('./components/core/Footer'),
     },
 
     data: () => ({

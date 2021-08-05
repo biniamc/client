@@ -4,6 +4,10 @@
     fluid
     tag="section"
   >
+  <!-- <UpdateEmployeeDrawer />
+  <UpdateEmployeeAppBar />
+  <UpdateEmployeeView />
+  <UpdateEmployeeSettings /> -->
     <v-row justify="center">
       <v-col
         cols="12"
@@ -147,18 +151,14 @@
 <script>
 import axios from "axios";
 export default {
+  // components: {
+  //     UpdateEmployeeAppBar: () => import('./components/core/AppBar'),
+  //     UpdateEmployeeDrawer: () => import('./components/core/Drawer'),
+  //     UpdateEmployeeSettings: () => import('./components/core/Settings'),
+  //     UpdateEmployeeView: () => import('./components/core/View'),
+  //   },
   data() {
     return {
-      drawer: false,
-      links: [
-        // { icon: "home", text: "Home", route: "/" },
-        // {
-        //   icon: "person_add",
-        //   text: "Create Account",
-        //   route: "/create-account",
-        // },
-        // // { icon: 'recent_actors', text: 'View Users Account', route: '/view_accounts'},
-      ],
       valid: true,
       emp_id:"",
       first_name: "",
@@ -193,6 +193,24 @@ export default {
       password: "",
     };
   },
+  created(){
+        let id = this.$route.params.id
+        axios.get(`http://localhost:3000/employee/${id}`)
+            .then(resp =>{
+                let data= resp.data
+                this.emp_id= data.emp_id
+                this.first_name = data.first_name
+                this.last_name = data.last_name
+                this.email = data.email
+                this.phone_no = data.phone_no;
+                this.branch = data.branch;
+                this.department = data.department;
+                this.gender = data.gender;
+                this.user_name = data.user_name;
+                this.password = data.password;
+            })
+    },
+    
   methods: {
   updateEmployee() {
       // if (this.$refs.form.validate()) {
@@ -208,12 +226,30 @@ export default {
         user_name: this.user_name,
         password: this.password,
       };
-
+console.log("newEmployee", newEmployee);
       axios
-        .put("http://localhost:3000/employees", newEmployee)
+        .put(`http://localhost:3000/employee/${this.$route.params.id}`, newEmployee)
+        //       return axios({
+        //         method: 'post',
+        //           data: {
 
+        //       },
+        //    url: 'http://localhost:3000/customers',
+        //     headers: {
+        //        'main-Type': 'application/json',
+        //       },
+        //     })
         .then(() => {
-          this.$router.push({ path: "/" });
+        //   this.$swal(
+        //     'Great!',
+        //     'customer added successfully',
+        //     'success',
+        //   ),
+        //   this.get('/customers', (req,res)=>{
+        //     res.render('/')
+        //   })
+        // .t
+          // this.$router.push({ path: "/" });
           this.$refs.form.reset();
         })
         .catch((err) => {
@@ -223,5 +259,5 @@ export default {
       return true;
     },
   },
-};
+}
 </script>

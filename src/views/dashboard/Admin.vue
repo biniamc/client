@@ -1,11 +1,14 @@
 <template>
   <v-container id="dashboard" fluid tag="section">
+    <!-- <AdminDrawer />
+    <AdminAppBar />
+    <AdminView />
+    <AdminSettings /> -->
     <v-row>
       <v-col cols="12" md="11">
         <base-material-card class="px-5 py-3">
           <template v-slot:heading>
             <v-tabs v-model="tabs" background-color="transparent" slider-color="white">
-              <v-tab class="mr-3">Bugs</v-tab>
               <v-tab class="mr-3">about</v-tab>
               <v-tab>admin</v-tab>
             </v-tabs>
@@ -32,7 +35,7 @@
                <router-link :to="'edit-customer/'+item._id">
                  <v-icon small class="mr-2" >mdi-pencil</v-icon>
                  </router-link> 
-                <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
+                <v-icon small @click="deleteItem1(item)">mdi-delete</v-icon>
               </template>
             </v-data-table>
           </v-card-text>
@@ -55,7 +58,7 @@
             <v-data-table :headers="employee_headers" :items="employees">
               <template v-slot:item.actions="{ item }">
                 <router-link :to="'UpdateEmployee/'+item._id">
-                <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
+                <v-icon small class="mr-2">mdi-pencil</v-icon>
                 </router-link>
                 <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
               </template>
@@ -70,7 +73,13 @@
 import axios from "axios";
 export default {
   name: "Admin",
-  data() {
+  // components: {
+  //     AdminAppBar: () => import('./components/core/AppBar'),
+  //     AdminDrawer: () => import('./components/core/Drawer'),
+  //     AdminSettings: () => import('./components/core/Settings'),
+  //     AdminView: () => import('./components/core/View'),
+  //   },
+    data() {
     return {
       customers: [],
       employees: [],
@@ -161,7 +170,7 @@ export default {
     },
     editItem(item){
 
-      this.editedIndex = this.custmerss.indexOf(item);
+      this.editedIndex = this.custmers.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
       
@@ -169,7 +178,7 @@ export default {
       //   .put("http://localhost:3000/customers"),
       
     },
-    deleteItem(item) {
+    deleteItem1(item) {
       axios
     .delete(`http://localhost:3000/customer/${item._id}`)
     .then(res => {

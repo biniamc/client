@@ -4,6 +4,10 @@
     fluid
     tag="section"
   >
+  <!-- <AddEmployeeDrawer />
+  <AddEmployeeAppBar />
+  <AddEmployeeView />
+  <AddEmployeeSettings /> -->
     <v-row justify="center">
       <v-col
         cols="12"
@@ -147,6 +151,12 @@
 <script>
 import axios from "axios";
 export default {
+  // components: {
+  //     AddEmployeeAppBar: () => import('./components/core/AppBar'),
+  //     AddEmployeeDrawer: () => import('./components/core/Drawer'),
+  //     AddEmployeeSettings: () => import('./components/core/Settings'),
+  //     AddEmployeeView: () => import('./components/core/View'),
+  //   },
   data() {
     return {
       drawer: false,

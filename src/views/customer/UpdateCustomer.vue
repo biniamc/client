@@ -1,127 +1,9 @@
-<!--<template>
-  <v-container
-    id="user-profile"
-    fluid
-    tag="section"
-  >
-    <v-row justify="center">
-      <v-col
-        cols="12"
-        md="8"
-      >
-        <base-material-card>
-          <template v-slot:heading>
-            <div class="text-h3 font-weight-light">
-              Add New Customer
-            </div>
-          </template>
-
-          <v-form>
-            <v-container class="py-0">
-              <v-row>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    v-model="user_name"
-                    class="purple-input"
-                    label="User Name"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    v-model="email"
-                    label="Email Address"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="6"
-                >
-                  <v-text-field
-                    v-model="first_name"
-                    label="First Name"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="6"
-                >
-                  <v-text-field
-                    v-model="last_name"
-                    label="Last Name"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col cols="12">
-                  <v-text-field
-                    v-model="address"
-                    label="Adress"
-                    class="purple-input"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    v-model="gender"
-                    label="Gender"
-                    class="purple-input"
-                  />
-                </v-col>
-                                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                  v-model="phone_no"
-                    class="purple-input"
-                    label="Phone Number"
-                    type="number"
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    label="Password"
-                    class="purple-input"
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  class="text-right"
-                >
-                  <v-btn
-                    color="success"
-                    class="mr-0"
-                  >
-                    Register
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-form>
-        </base-material-card>
-      </v-col>
-    </v-row>
-  </v-container>
-</template>-->
 <template>
   <v-container id="user-profile" fluid tag="section">
+    <!-- <UpdateCustomerDrawer />
+    <UpadteCustomerAppBar />
+    <UpadteCustomerView />
+    <UpadteCustomerSettings /> -->
     <v-row justify="center">
       <v-col cols="12" md="8">
         <base-material-card>
@@ -217,6 +99,12 @@
 <script>
 import axios from "axios";
 export default {
+  // components: {
+  //     UpadteCustomerAppBar: () => import('./components/core/AppBar'),
+  //     UpadteCustomerDrawer: () => import('./components/core/Drawer'),
+  //     UpadteCustomerSettings: () => import('./components/core/Settings'),
+  //     DUpadteCustomerView: () => import('./components/core/View'),
+  //   },
   data: () => ({
     dialog: false,
     dialogDelete: false,
